@@ -100,6 +100,14 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Testmail: /api/check?test=1  -> verschickt sofort eine Dummy-Mail.
+    if (req.query.test) {
+      const id = await sendMail("TEST – Setup-Check", [
+        { night: "TEST", free: 99, breakdown: [{ label: "Testlager", free: 99, total: 99 }] },
+      ]);
+      return res.status(200).json({ ok: true, test: true, mailId: id });
+    }
+
     const info = await hutInfo();
     const hutName = info.hutName || `Hütte ${HUT_ID}`;
     const cats = (info.hutBedCategories || []).filter((c) => c.isVisible);
