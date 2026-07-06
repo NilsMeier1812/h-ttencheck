@@ -9,7 +9,7 @@ const HUT_ID    = 150;
 const NIGHTS    = ["28.07.2026", "29.07.2026"];   // Anreisedaten, je genau 1 Nacht
 const MIN_FREE  = 1;                               // ab so vielen freien Plaetzen melden
 const MAIL_TO   = "nils-er@gmx.de";
-const MAIL_FROM = "Hütten-Watcher <alarm@DEINE-DOMAIN.de>"; // <- deine verifizierte Resend-Domain
+const MAIL_FROM = "Hütten-Watcher <huette@nils-meier.de>"; // <- deine verifizierte Resend-Domain
 // RESEND_API_KEY kommt aus den Vercel-Env-Vars (nicht ins Repo!).
 // Optionaler Schutz: CRON_SECRET als Env setzen -> dann Header/Query noetig.
 // -----------------------------------------------------------------------
